@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Har Analyzer Results</title>
+</head>
+<body>
+    <h1>Har Analyzer Results</h1>
+    
+    <h2>Entries:</h2>
+    <ul>
+        {% for entry in analysis.entries %}
+            <li>
+                <h3>Entry</h3>
+                <p>Started Date and Time: {{ entry.startedDateTime }}</p>
+                <p>Time: {{ entry.time }} ms</p>
+                
+                <h4>Request</h4>
+                <p>Method: {{ entry.request.method }}</p>
+                <p>URL: {{ entry.request.url }}</p>
+                <p>HTTP Version: {{ entry.request.httpVersion }}</p>
+                
+                <h4>Response</h4>
+                <p>Status: {{ entry.response.status }}</p>
+                <p>Status Text: {{ entry.response.statusText }}</p>
+                <p>HTTP Version: {{ entry.response.httpVersion }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
